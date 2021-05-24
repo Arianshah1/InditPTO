@@ -2,23 +2,23 @@
 #Hinzufügen,Löschen, Abfragen, Beenden
 #
 
-woerterbuch_de=["Apfel", "Birne", "Kirsche", "Melone", "Marille", "Pfirsich"]
+woerterbuch_de=["Apfel", "Birne", "Kirsche", "Melone", "Marille", "Pfirsich"] #Listen
 
 woerterbuch_en=["apple", "pear", "cherry", "melon", "apricot", "peach"]
 
-program=True
+program=True #damit programm beendet werden kann
 
 while program==True:
-    selection=input("Welche operation soll ausgeführt werden? (H)inzufügen, (L)öschen, (A)bfragen, (B)eenden:")
+    selection=input("Welche operation soll ausgeführt werden? (H)inzufügen, (L)öschen, (A)bfragen, (B)eenden:") #Operation auswählen
     
-    
+#Hinzufügen eines Wortes    
     if selection== "H":
         neues_wort_de=input("Deutsches Wort:")
         woerterbuch_de.append(neues_wort_de)
         neues_wort_en=input("English word:")
         woerterbuch_en.append(neues_wort_en)
         print("Wort erfolgreich hinzugefügt/word is now available")
-
+#Löschen eines Wortes
     elif selection =="L":
         print ("Welches Wort soll gelöscht werden?/Wich word should be deleted?",woerterbuch_de, woerterbuch_en)
         delete=(input("Welches Wort soll gelöscht werden?:"))
@@ -43,7 +43,7 @@ while program==True:
             print("Wort nicht gefunden")
         
         
-        
+#Wort übersetzen        
     elif selection=="A":
         search=(input("Welches Wort soll übersetzt werden?/ Which word should be translated?"))
         le=len(woerterbuch_de)
@@ -59,12 +59,12 @@ while program==True:
                 break
             index=index+1
   
-
+#wenn das wort nicht gefunden wird 
         if index==le: 
             print("Es konnte kein Wort gefunden werden./No word could be found.")
                 
         
-         
+#programm beenden         
     elif selection=="B":
         print("Programm beendet")
         program==False
